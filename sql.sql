@@ -18,6 +18,7 @@ USE `ssafyns` ;
 -- Table `ssafyns`.`user`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ssafyns`.`user` (
+  `user_uid` BIGINT NOT NULL AUTO_INCREMENT,
   `user_id` VARCHAR(45) NOT NULL,
   `user_pw` VARCHAR(45) NOT NULL,
   `user_name` VARCHAR(45) NOT NULL,
@@ -34,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `ssafyns`.`user` (
   `user_point` INT NOT NULL DEFAULT 0,
   `user_photo` VARCHAR(100) NOT NULL,
   `user_isleave` TINYINT NOT NULL DEFAULT 0,
-  PRIMARY KEY (`user_id`),
+  PRIMARY KEY (`user_uid`),
   UNIQUE INDEX `user_nickname_UNIQUE` (`user_nickname` ASC),
   UNIQUE INDEX `user_email_UNIQUE` (`user_email` ASC),
   UNIQUE INDEX `user_phone_UNIQUE` (`user_phone` ASC))
@@ -45,7 +46,7 @@ ENGINE = InnoDB;
 -- Table `ssafyns`.`notice`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ssafyns`.`notice` (
-  `notice_no` INT NOT NULL AUTO_INCREMENT,
+  `notice_no` BIGINT NOT NULL AUTO_INCREMENT,
   `notice_title` VARCHAR(45) NOT NULL,
   `notice_content` VARCHAR(20000) NOT NULL,
   `notice_date` DATETIME NOT NULL DEFAULT current_timestamp,
@@ -58,29 +59,22 @@ ENGINE = InnoDB;
 -- Table `ssafyns`.`notice_comment`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ssafyns`.`notice_comment` (
-  `ncomment_no` INT NOT NULL AUTO_INCREMENT,
-  `ncomment_user_id` VARCHAR(45) NOT NULL,
-  `ncomment_notice_no` INT NOT NULL,
+  `ncomment_no` BIGINT NOT NULL AUTO_INCREMENT,
+  `user_user_uid` BIGINT NOT NULL,
+  `notice_notice_no` BIGINT NOT NULL,
   `ncomment_content` VARCHAR(20000) NOT NULL,
   `ncomment_date` DATETIME NOT NULL DEFAULT current_timestamp,
-  `ncomment_pno` INT NULL,
   PRIMARY KEY (`ncomment_no`),
-  INDEX `fk_user_has_notice_notice1_idx` (`ncomment_notice_no` ASC),
-  INDEX `fk_user_has_notice_user_idx` (`ncomment_user_id` ASC),
-  INDEX `fk_notice_comment_notice_comment1_idx` (`ncomment_pno` ASC),
-  CONSTRAINT `fk_user_has_notice_user`
-    FOREIGN KEY (`ncomment_user_id`)
-    REFERENCES `ssafyns`.`user` (`user_id`)
+  INDEX `fk_notice_comment_user1_idx` (`user_user_uid` ASC),
+  INDEX `fk_notice_comment_notice1_idx` (`notice_notice_no` ASC),
+  CONSTRAINT `fk_notice_comment_user1`
+    FOREIGN KEY (`user_user_uid`)
+    REFERENCES `ssafyns`.`user` (`user_uid`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_user_has_notice_notice1`
-    FOREIGN KEY (`ncomment_notice_no`)
+  CONSTRAINT `fk_notice_comment_notice1`
+    FOREIGN KEY (`notice_notice_no`)
     REFERENCES `ssafyns`.`notice` (`notice_no`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_notice_comment_notice_comment1`
-    FOREIGN KEY (`ncomment_pno`)
-    REFERENCES `ssafyns`.`notice_comment` (`ncomment_no`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -90,7 +84,7 @@ ENGINE = InnoDB;
 -- Table `ssafyns`.`freeboard`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ssafyns`.`freeboard` (
-  `freeboard_no` INT NOT NULL AUTO_INCREMENT,
+  `freeboard_no` BIGINT NOT NULL AUTO_INCREMENT,
   `freeboard_title` VARCHAR(45) NOT NULL,
   `freeboard_content` VARCHAR(20000) NOT NULL,
   `freeboard_date` DATETIME NOT NULL DEFAULT current_timestamp,
@@ -105,31 +99,24 @@ ENGINE = InnoDB;
 -- Table `ssafyns`.`freeboard_comment`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ssafyns`.`freeboard_comment` (
-  `fbcomment_no` INT NOT NULL AUTO_INCREMENT,
-  `fbcomment_freeboard_no` INT NOT NULL,
-  `fbcomment_user_id` VARCHAR(45) NOT NULL,
+  `fbcomment_no` BIGINT NOT NULL AUTO_INCREMENT,
+  `user_user_uid` BIGINT NOT NULL,
+  `freeboard_freeboard_no` BIGINT NOT NULL,
   `fbcomment_content` VARCHAR(20000) NOT NULL,
   `fbcomment_date` DATETIME NOT NULL DEFAULT current_timestamp,
   `fbcomment_likes` INT NOT NULL DEFAULT 0,
   `fbcomment_hates` INT NOT NULL DEFAULT 0,
-  `fbcomment_pno` INT NOT NULL,
-  INDEX `fk_freeboard_has_user_user1_idx` (`fbcomment_user_id` ASC),
-  INDEX `fk_freeboard_has_user_freeboard1_idx` (`fbcomment_freeboard_no` ASC),
   PRIMARY KEY (`fbcomment_no`),
-  INDEX `fk_freeboard_comment_freeboard_comment1_idx` (`fbcomment_pno` ASC),
-  CONSTRAINT `fk_freeboard_has_user_freeboard1`
-    FOREIGN KEY (`fbcomment_freeboard_no`)
+  INDEX `fk_freeboard_comment_user1_idx` (`user_user_uid` ASC),
+  INDEX `fk_freeboard_comment_freeboard1_idx` (`freeboard_freeboard_no` ASC),
+  CONSTRAINT `fk_freeboard_comment_user1`
+    FOREIGN KEY (`user_user_uid`)
+    REFERENCES `ssafyns`.`user` (`user_uid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_freeboard_comment_freeboard1`
+    FOREIGN KEY (`freeboard_freeboard_no`)
     REFERENCES `ssafyns`.`freeboard` (`freeboard_no`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_freeboard_has_user_user1`
-    FOREIGN KEY (`fbcomment_user_id`)
-    REFERENCES `ssafyns`.`user` (`user_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_freeboard_comment_freeboard_comment1`
-    FOREIGN KEY (`fbcomment_pno`)
-    REFERENCES `ssafyns`.`freeboard_comment` (`fbcomment_no`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -139,9 +126,9 @@ ENGINE = InnoDB;
 -- Table `ssafyns`.`message`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ssafyns`.`message` (
-  `message_no` INT NOT NULL AUTO_INCREMENT,
-  `message_suser_id` VARCHAR(45) NOT NULL,
-  `message_ruser_id` VARCHAR(45) NOT NULL,
+  `message_no` BIGINT NOT NULL AUTO_INCREMENT,
+  `message_suid` BIGINT NOT NULL,
+  `message_ruid` BIGINT NOT NULL,
   `message_title` VARCHAR(45) NOT NULL,
   `message_content` VARCHAR(20000) NOT NULL,
   `message_date` DATETIME NOT NULL,
@@ -149,10 +136,16 @@ CREATE TABLE IF NOT EXISTS `ssafyns`.`message` (
   `message_rdel` TINYINT NOT NULL DEFAULT 0,
   `message_sdel` TINYINT NOT NULL DEFAULT 0,
   PRIMARY KEY (`message_no`),
-  INDEX `fk_message_user1_idx` (`message_ruser_id` ASC),
+  INDEX `fk_message_user1_idx` (`message_ruid` ASC),
+  INDEX `fk_message_user2_idx` (`message_suid` ASC),
   CONSTRAINT `fk_message_user1`
-    FOREIGN KEY (`message_ruser_id`)
-    REFERENCES `ssafyns`.`user` (`user_id`)
+    FOREIGN KEY (`message_ruid`)
+    REFERENCES `ssafyns`.`user` (`user_uid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_message_user2`
+    FOREIGN KEY (`message_suid`)
+    REFERENCES `ssafyns`.`user` (`user_uid`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
