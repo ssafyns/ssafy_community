@@ -1,4 +1,4 @@
-##원피스 프로젝트
+# 원피스 프로젝트
 
 ### 팀명 : 원피스
 
@@ -17,16 +17,16 @@
     (1) 회원관리
 
 		- 사용자는 회원가입 / 탈퇴 / 로그인 / 로그아웃을 할 수 있다.
-
+	
 		- 회원가입을 할 때 SSAFY 회원임을 인증해야 한다.
 			- 사피 명찰 찍어 올리기?
-
+	
 		- 회원을 기수별로 구분해서 보여준다.
-
+	
 		- 하루 방문자 수와 총 방문자 수를 보여준다.
 
 	(2) 게시판 관리
-    
+  
     	- 웹 사이트에는 익명 자유게시판이 존재한다.
 
 		- 취업 / 스터디 / 팁게
@@ -64,3 +64,19 @@
 - 웹사이트 디자인
 
 ![model](./images/site_image.PNG)
+
+#### 20190526 backend
+
+* 개발환경
+  * eclipse
+* 처음 eclipse 설정
+  * encoding `utf-8`로 설정
+  * Spring Boot Version 1.5.21
+  * dependencies
+    * DevTools
+    * MySQL
+    * MyBatis
+    * Web
+  * Mysql 서버포트 정하기
+
+> gitignore에서 application.properties는 추가하는 게 맞겠지?
