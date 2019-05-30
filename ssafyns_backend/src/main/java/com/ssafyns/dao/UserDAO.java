@@ -6,15 +6,15 @@ import com.ssafyns.vo.User;
 
 public interface UserDAO {
 
-	void InsertUserDAO(User user);
+	void insertUser(User user);
 
-	void UpdateUserDAO(User user);
+	void updateUser(User user);
 
-	void DeleteUserDAO(String user_id);
+	void deleteUser(String user_id);
 
-	User SelectUserDAO(String user_id);
+	User selectUser(String user_id);
 	
-	List<User> SelectUserListDAO();
+	List<User> selectUserList();
 
 	
 }

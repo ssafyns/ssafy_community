@@ -2,42 +2,43 @@ package com.ssafyns.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.ssafyns.dao.UserDAO;
 import com.ssafyns.vo.User;
 
+@Service
 public class UserServiceImpl implements UserService {
 
-	UserDAO userDao;
+	private UserDAO userDao;
 
-	@Override
 	public void setUserDao(UserDAO userDao) {
 		this.userDao = userDao;
 	}
 
 	@Override
-	public void InsertUserService(User user) {
-		userDao.InsertUserDAO(user);
+	public void createUser(User user) {
+		userDao.insertUser(user);
 	}
 
 	@Override
-	public void UpdateUserService(User user) {
-		userDao.UpdateUserDAO(user);
+	public void modifyUser(User user) {
+		userDao.updateUser(user);
 	}
 
 	@Override
-	public void DeleteUserService(String user_id) {
-		userDao.DeleteUserDAO(user_id);
+	public void destroyUser(String user_id) {
+		userDao.deleteUser(user_id);
 	}
 
 	@Override
-	public User SelectUserService(String user_id) {
-		User u = userDao.SelectUserDAO(user_id);
-		return u;
+	public User getUser(String user_id) {
+		return userDao.selectUser(user_id);
 	}
 
 	@Override
-	public List<User> SelectUserListService() {
-		return userDao.SelectUserListDAO();
+	public List<User> getUserList() {
+		return userDao.selectUserList();
 	}
 
 }
