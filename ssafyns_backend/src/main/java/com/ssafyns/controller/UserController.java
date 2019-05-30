@@ -1,57 +1,69 @@
 package com.ssafyns.controller;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.ssafyns.service.UserService;
 import com.ssafyns.vo.User;
 
-@RequestMapping("/user")
-@Controller
+@CrossOrigin(origins = { "*" })
+@RestController
 public class UserController {
 
-	UserService userService;
+	private UserService userService;
 	
 	@Autowired
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}
 
-	@PostMapping("/u_insert.do")
-	public String UserControllerInsert(User user,HttpSession session) {
-		userService.SelectUserService(user.getUser_id());
-		return "redirect:/food/list.do";
+	@PostMapping("/user")
+	public ResponseEntity<Boolean> createUserCtrl(@RequestBody User user) {
+		userService.createUser(user);
+		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 	}
 
-	@PostMapping("/u_delete.do")
-	public String UserControllerDelete(HttpSession hsession) {
-		userService.DeleteUserService(((User) hsession.getAttribute("user")).getUser_id());
+	@DeleteMapping("/user/{id}")
+	public ResponseEntity<Boolean> destroyUserCtrl(@PathVariable String id, HttpSession hsession) {
+		userService.destroyUser(id);
 		hsession.invalidate();
-		return "redirect:/food/list.do";
+		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 	}
 
-	@PostMapping("/u_update.do")
-	public String UserControllerUpdate(User user, HttpSession session) {
-		userService.UpdateUserService(user);
-		session.setAttribute("user", user);
-		return "redirect:/food/list.do";
+	@PutMapping("/user")
+	public ResponseEntity<Boolean> modifyUserCtrl(@RequestBody User user) {
+		userService.modifyUser(user);
+		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 	}
 
-	@GetMapping("/u_select.do")
-	public String UserControllerSelect(Model model, User user) {
-		model.addAttribute("user", userService.SelectUserService(user.getUser_id()));
-		return "redirect:/food/list.do";
+	@GetMapping("/user/{id}")
+	public ResponseEntity<Boolean> getUserCtrl(@PathVariable String user_id) {
+		userService.getUser(user_id);
+		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
+	}
+	
+	@GetMapping("/users")
+	public ResponseEntity<Boolean> getUserListCtrl(@RequestBody User user) {
+		userService.getUserList();
+		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
+	}
+	
+	@GetMapping("/login/{id}/{pw}")
+	public ResponseEntity<Boolean> UserLoginControllerSelect(@PathVariable String id, @PathVariable String pw) {
+		System.out.println("로그인 성공");
+		System.out.println(id + " " + pw);
+		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 	}
 
 

@@ -3,9 +3,11 @@ package com.ssafyns.dao;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
 
 import com.ssafyns.vo.User;
 
+@Repository
 public class UserDAOImpl implements UserDAO {
 
 	private SqlSession session;
@@ -15,27 +17,27 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public void InsertUserDAO(User user) {
+	public void insertUser(User user) {
 		session.insert("user.InsertUser", user);
 	}
 
 	@Override
-	public void UpdateUserDAO(User user) {
+	public void updateUser(User user) {
 		session.update("user.UpdateUser", user);
 	}
 
 	@Override
-	public void DeleteUserDAO(String user_id) {
-		session.update("user.DeleteUser", user_id);
+	public void deleteUser(String user_id) {
+		session.delete("user.DeleteUser", user_id);
 	}
 
 	@Override
-	public User SelectUserDAO(String user_id) {
+	public User selectUser(String user_id) {
 		return session.selectOne("user.SelectUser", user_id);
 	}
 	
 	@Override
-	public List<User> SelectUserListDAO() {
+	public List<User> selectUserList() {
 		return session.selectList("user.SelectUserList");
 	}
 	
