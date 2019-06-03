@@ -22,7 +22,7 @@ import com.ssafyns.vo.User;
 public class UserController {
 
 	private UserService userService;
-	
+
 	@Autowired
 	public void setUserService(UserService userService) {
 		this.userService = userService;
@@ -30,6 +30,8 @@ public class UserController {
 
 	@PostMapping("/user")
 	public ResponseEntity<Boolean> createUserCtrl(@RequestBody User user) {
+		System.out.println("create됨!!!!!!!!!!!!!");
+		System.out.println(user.toString());
 		userService.createUser(user);
 		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 	}
@@ -52,19 +54,17 @@ public class UserController {
 		userService.getUser(user_id);
 		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 	}
-	
+
 	@GetMapping("/users")
 	public ResponseEntity<Boolean> getUserListCtrl(@RequestBody User user) {
 		userService.getUserList();
 		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 	}
-	
+
 	@GetMapping("/login/{id}/{pw}")
 	public ResponseEntity<Boolean> UserLoginControllerSelect(@PathVariable String id, @PathVariable String pw) {
 		System.out.println("로그인 성공");
 		System.out.println(id + " " + pw);
 		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 	}
-
-
 }

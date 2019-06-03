@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="freeBoard">
+
+<insert id="insertFreeBoard" parameterType="FreeBoard">
+	insert into freeboard(freeboard_no, freeboard_title, freeboard_content, freeboard_date, 
+	freeboard_hits, freeboard_likes, freeboard_hates)
+	values(#{freeboard_no}, #{freeboard_title}, #{freeboard_content}, #{freeboard_date}, 
+	#{freeboard_hits}, #{freeboard_likes}, #{freeboard_hates})
+</insert>
+
+<update id="updateFreeBoard" parameterType="FreeBoard">
+	update freeboard
+	set
+	freeboard_no= #{freeboard_no},
+	freeboard_title= #{freeboard_title},
+	freeboard_content= #{freeboard_content},
+	freeboard_date= #{freeboard_date}, 
+	freeboard_hits= #{freeboard_hits},
+	freeboard_likes= #{freeboard_likes},
+	freeboard_hates= #{freeboard_hates}
+	where freeboard_no = #{freeboard_no}
+</update>
+
+<delete id="deleteFreeBoard" parameterType="String">
+	delete from freeboard
+	where freeboard_no = #{freeboard_no}
+</delete>
+
+<select id="selectFreeBoard" parameterType="String">
+	select freeboard_no, freeboard_title, freeboard_content, freeboard_date, 
+	freeboard_hits, freeboard_likes, freeboard_hates
+	from freeboard
+	where freeboard_no = #{freeboard_no}
+</select>
+
+<select id="selectFreeBoardList">
+	select freeboard_no, freeboard_title, freeboard_content, freeboard_date, 
+	freeboard_hits, freeboard_likes, freeboard_hates
+	from freeboard
+</select>
+
+</mapper>

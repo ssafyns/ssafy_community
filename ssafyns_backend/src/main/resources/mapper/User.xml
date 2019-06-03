@@ -10,10 +10,10 @@
 	<insert id="InsertUser" parameterType="User">
 		insert into user(
 		user_id, user_pw, user_name, user_nickname, user_phone, user_email,	user_birth, user_gender,
-		user_address, user_school, user_th, user_rank, user_point, user_photo, user_isleave)
+		user_address, user_school,user_edu_city, user_th, user_rank, user_point, user_photo, user_isleave)
 		values(
 		#{user_id}, #{user_pw}, #{user_name}, #{user_nickname}, #{user_phone}, #{user_email},
-		#{user_birth}, #{user_gender}, #{user_address}, #{user_school}, #{user_th}, #{user_rank}, 
+		#{user_birth}, #{user_gender}, #{user_address}, #{user_school}, #{user_edu_city}, #{user_th}, #{user_rank}, 
 		#{user_point}, #{user_photo}, #{user_isleave})
 	</insert>
 
