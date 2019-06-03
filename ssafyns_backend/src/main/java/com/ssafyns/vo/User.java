@@ -103,11 +103,11 @@ public class User {
 		this.user_birth = user_birth;
 	}
 
-	public String getGender() {
+	public String getUser_gender() {
 		return user_gender;
 	}
 
-	public void setGender(String user_gender) {
+	public void setUser_gender(String user_gender) {
 		this.user_gender = user_gender;
 	}
 
@@ -173,6 +173,15 @@ public class User {
 
 	public void setUser_isleave(int user_isleave) {
 		this.user_isleave = user_isleave;
+	}
+
+	@Override
+	public String toString() {
+		return "User [user_id=" + user_id + ", user_pw=" + user_pw + ", user_name=" + user_name + ", user_nickname="
+				+ user_nickname + ", user_phone=" + user_phone + ", user_email=" + user_email + ", user_birth="
+				+ user_birth + ", user_gender=" + user_gender + ", user_address=" + user_address + ", user_school="
+				+ user_school + ", user_edu_city=" + user_edu_city + ", user_th=" + user_th + ", user_rank=" + user_rank
+				+ ", user_point=" + user_point + ", user_photo=" + user_photo + ", user_isleave=" + user_isleave + "]";
 	}
 
 }
