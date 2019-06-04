@@ -1,5 +1,5 @@
 export default {
-  name: 'navigator',
+  name: 'board-detail',
   components: {},
   props: [],
   data () {
@@ -10,9 +10,10 @@ export default {
   computed: {
 
   },
+  mounted () {
 
+  },
   methods: {
 
   }
 }
-

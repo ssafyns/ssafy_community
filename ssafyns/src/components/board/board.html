@@ -1,0 +1,56 @@
+
+<section class="board">
+
+  <div class="container">
+  <div class="input-group mb-3" style="margin: 0 auto">
+    <div class="input-group-prepend">
+
+      <select name="key" class="form-control">
+        <option value="name">제목+내용</option>
+        <option value="maker">제목</option>
+        <option value="material">내용</option>
+      </select>
+    </div>
+    <input type="text" class="form-control" aria-label="Text input with dropdown button" v-model="title">
+    <button id="searchBtn"  class="btn btn-primary" :value="title" @click="searchTarget" >검색</button>
+  </div>
+
+  <table class="table table-hover" style="margin : 0 auto">
+    <thead class="table-primary">
+    <tr>
+      <th>번호</th>
+      <th>글쓴이</th>
+      <th>조회수</th>
+      <th style="width: 400px">제목</th>
+      <th>날짜</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr v-for="c in filtered"> <!--filtered 뭐징-->
+      <td>{{c.freeboard_no}}</td>
+      <td>{{c.user_uid}}</td>
+      <td>{{c.freeboard_hits}}</td>
+      <td><a href="#" @click.prevent="detailBoard">{{c.freeboard_title}}</a></td>
+      <td>{{c.freeboard_date}}</td>
+    </tr>
+
+    </tbody>
+  </table>
+  <hr/>
+
+    <router-link to="/board_register"><button class="btn btn-primary" style="float: right">글쓰기</button></router-link>
+
+    <nav aria-label="Page navigation example" style="margin: 0 35% 0 35%">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </nav>
+
+  </div>
+
+</section>
+

@@ -27,5 +27,20 @@ export default new Router({
       name: 'signup',
       component : () => import('./views/Signup.vue')
     },
+    {
+      path: '/board',
+      name : 'board',
+      component : () => import('./views/Board.vue')
+    },
+    {
+      path:'/board_detail',
+      name : 'board_detail',
+      component : () => import('./views/Board_detail.vue')
+    },
+    {
+      path:'/board_register',
+      name : 'board_register',
+      component : () => import('./views/Board_register.vue')
+    }
   ]
 });
