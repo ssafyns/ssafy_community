@@ -50,21 +50,20 @@ public class UserController {
 	}
 
 	@GetMapping("/user/{id}")
-	public ResponseEntity<Boolean> getUserCtrl(@PathVariable String user_id) {
-		userService.getUser(user_id);
-		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
+	public ResponseEntity<User> getUserCtrl(@PathVariable String user_id) {
+		return new ResponseEntity<User>(userService.getUser(user_id), HttpStatus.OK);
 	}
 
 	@GetMapping("/users")
-	public ResponseEntity<Boolean> getUserListCtrl(@RequestBody User user) {
+	public ResponseEntity<Boolean> getUserListCtrl() {
 		userService.getUserList();
 		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 	}
 
 	@GetMapping("/login/{id}/{pw}")
 	public ResponseEntity<Boolean> UserLoginControllerSelect(@PathVariable String id, @PathVariable String pw) {
-		System.out.println("로그인 성공");
-		System.out.println(id + " " + pw);
-		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
+		return (userService.getUser(id) != null && userService.getUser(id).getUser_pw().equals(pw))
+				? new ResponseEntity<Boolean>(true, HttpStatus.OK)
+				: new ResponseEntity<Boolean>(false, HttpStatus.OK);
 	}
 }
