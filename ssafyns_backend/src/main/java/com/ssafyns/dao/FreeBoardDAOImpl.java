@@ -1,5 +1,9 @@
 package com.ssafyns.dao;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -17,17 +21,22 @@ public class FreeBoardDAOImpl implements FreeBoardDAO {
 	}
 
 	@Override
-	public void createFreeBoard(FreeBoard freeBoard) {
-		session.insert("freeBoard.insertFreeBoard", freeBoard);
-	}
-
-	@Override
-	public FreeBoard getFreeBoard(String freeboard_no) {
+	public FreeBoard selectFreeBoard(String freeboard_no) {
 		return session.selectOne("freeBoard.selectFreeBoard", freeboard_no);
 	}
+	
+	@Override
+	public List<FreeBoard> selectFreeBoardList() {
+		return session.selectList("freeBoard.selectFreeBoardList");
+	}
 
 	@Override
-	public void modifyFreeBoard(FreeBoard freeBoard) {
+	public void insertFreeBoard(FreeBoard freeBoard) {
+		session.insert("freeBoard.insertFreeBoard", freeBoard);
+	}
+	
+	@Override
+	public void updateFreeBoard(FreeBoard freeBoard) {
 		session.update("freeBoard.updateFreeBoard", freeBoard);
 	}
 
