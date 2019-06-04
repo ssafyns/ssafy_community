@@ -2,6 +2,7 @@ package com.ssafyns.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ssafyns.dao.UserDAO;
@@ -12,6 +13,7 @@ public class UserServiceImpl implements UserService {
 
 	private UserDAO userDao;
 
+	@Autowired
 	public void setUserDao(UserDAO userDao) {
 		this.userDao = userDao;
 	}
