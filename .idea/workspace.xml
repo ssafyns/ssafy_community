@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f80f936e-05ff-4aef-bcd6-d7560d696778" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f80f936e-05ff-4aef-bcd6-d7560d696778" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -19,8 +16,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ssafyns/src/components/login/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="18" column="4" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+            <state relative-caret-position="414">
+              <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -28,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ssafyns/src/components/login/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="15" column="126" selection-start-line="15" selection-start-column="126" selection-end-line="15" selection-end-column="126" />
+            <state relative-caret-position="193">
+              <caret line="11" column="59" lean-forward="true" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -115,74 +112,36 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="SSAFYNS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSAFYNS" type="462c0819:PsiDirectoryNode" />
+              <item name="ssafy_com" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ssafy_com" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SSAFYNS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSAFYNS" type="462c0819:PsiDirectoryNode" />
+              <item name="ssafy_com" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ssafy_com" type="462c0819:PsiDirectoryNode" />
               <item name="ssafyns" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SSAFYNS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSAFYNS" type="462c0819:PsiDirectoryNode" />
-              <item name="ssafyns" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSAFYNS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSAFYNS" type="462c0819:PsiDirectoryNode" />
+              <item name="ssafy_com" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ssafy_com" type="462c0819:PsiDirectoryNode" />
               <item name="ssafyns" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SSAFYNS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSAFYNS" type="462c0819:PsiDirectoryNode" />
+              <item name="ssafy_com" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ssafy_com" type="462c0819:PsiDirectoryNode" />
               <item name="ssafyns" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSAFYNS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSAFYNS" type="462c0819:PsiDirectoryNode" />
-              <item name="ssafyns" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="board" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSAFYNS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSAFYNS" type="462c0819:PsiDirectoryNode" />
-              <item name="ssafyns" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="board_detail" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSAFYNS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSAFYNS" type="462c0819:PsiDirectoryNode" />
-              <item name="ssafyns" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSAFYNS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSAFYNS" type="462c0819:PsiDirectoryNode" />
-              <item name="ssafyns" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="signup" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -261,6 +220,7 @@
       <workItem from="1559212136992" duration="6872000" />
       <workItem from="1559546004735" duration="4677000" />
       <workItem from="1559624949497" duration="5696000" />
+      <workItem from="1559643263525" duration="625000" />
     </task>
     <task id="LOCAL-00001" summary="Eldyd">
       <created>1559037211541</created>
@@ -273,15 +233,16 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93532000" />
+    <option name="totallyTimeSpent" value="94157000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="327" y="0" width="1167" height="842" extended-state="0" />
+    <frame x="408" y="0" width="1459" height="1053" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.21769911" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.2174525" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.49885058" visible="true" weight="0.3300423" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49885058" visible="true" weight="0.3297062" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5011494" side_tool="true" weight="0.33296824" />
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.3264642" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
@@ -569,9 +530,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ssafyns/src/components/what/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ssafyns/src/components/what/package.json" />
     <entry file="file://$PROJECT_DIR$/ssafyns/src/components/board_detail/index.vue">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -616,16 +575,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ssafyns/src/components/test.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/login.js" />
+    <entry file="file://$PROJECT_DIR$/ssafyns/src/components/test.js" />
     <entry file="file://$PROJECT_DIR$/ssafyns/src/components/signup/signup.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1140">
@@ -633,24 +584,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/signup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="46" column="14" lean-forward="true" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/signup.js" />
     <entry file="file://$PROJECT_DIR$/ssafyns/src/components/login/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="18" column="4" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+        <state relative-caret-position="414">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ssafyns/src/components/login/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="126" selection-start-line="15" selection-start-column="126" selection-end-line="15" selection-end-column="126" />
+        <state relative-caret-position="193">
+          <caret line="11" column="59" lean-forward="true" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
         </state>
       </provider>
     </entry>
