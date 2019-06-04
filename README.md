@@ -64,7 +64,7 @@ _ _ _
 
 - 웹사이트 디자인
 
-![model](./images/site_image.PNG)
+![model](./images/site_image.png)
 
 _ _ _
 
