@@ -1,3 +1,6 @@
+const axios = require('axios');
+
+
 export default {
   name: 'login',
   components: {},
@@ -17,18 +20,24 @@ export default {
   methods: {
     goLogin() {
       console.log('goLogin');
-      axios.post('', {
-        params : {
-          id : this.userId,
-          pw : this.userPw
-        }
-      })
+      axios.get('http://70.12.247.42:8080/login'+'/'+this.userId + '/'+this.userPw)
           .then(response => {
-              if(response.data === true)  {
-                // action
-              }
+            console.log(typeof response.data);
+            if(response.data)  {
+              alert('로그인 성공');
+              // 로그인 성공하면 store에 userId 저장.
+              this.$store.state.userId = this.userId;
+              this.$store.state.test = this.userId;
+              console.log(this.$store.state.userId);
+              this.goHome();
+            }
           })
     },
+    goHome() {
+      this.$router.push({
+        name: 'about'
+      })
+    }
 
   }
 }
