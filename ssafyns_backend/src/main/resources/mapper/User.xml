@@ -4,7 +4,6 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-
 <mapper namespace="user">
 
 	<insert id="InsertUser" parameterType="User">
@@ -34,7 +33,7 @@
 
 	<select id="SelectUser" parameterType="String" resultType="User">
 		select
-		user_id, user_pw, user_name, user_nickname, user_phone, user_email,	user_birth, user_gender,
+		user_uid, user_id, user_pw, user_name, user_nickname, user_phone, user_email,	user_birth, user_gender,
 		user_address, user_school, user_th, user_rank, user_point, user_photo, user_isleave 
 		from user
 		where user_id = #{user_id}
@@ -42,13 +41,9 @@
 	
 	<select id="SelectUserList" resultType="User">
 		select
-		user_id, user_pw, user_name, user_nickname, user_phone, user_email,	user_birth, user_gender,
+		user_uid, user_id, user_pw, user_name, user_nickname, user_phone, user_email,	user_birth, user_gender,
 		user_address, user_school, user_th, user_rank, user_point, user_photo, user_isleave 
 		from user
 	</select>
 	
-	
 </mapper>
-
-
-
