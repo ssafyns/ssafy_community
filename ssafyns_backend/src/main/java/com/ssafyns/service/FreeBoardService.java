@@ -1,15 +1,19 @@
 package com.ssafyns.service;
 
+import java.util.List;
+
 import com.ssafyns.vo.FreeBoard;
 
 public interface FreeBoardService {
 
-	void insertFreeBoard(FreeBoard freeBoard);
+	FreeBoard getFreeBoard(String freeboard_no);
 
-	FreeBoard selectFreeBoard(String freeboard_no);
+	List<FreeBoard> getFreeBoardList();
 
-	void updateFreeBoard(FreeBoard freeBoard);
+	void createFreeBoard(FreeBoard freeBoard);
 
-	void deleteFreeBoard(String freeboard_no);
+	void modifyFreeBoard(FreeBoard freeBoard);
+
+	void destroyFreeBoard(String freeboard_no);
 
 }
