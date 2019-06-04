@@ -50,8 +50,8 @@ public class UserController {
 	}
 
 	@GetMapping("/user/{id}")
-	public ResponseEntity<User> getUserCtrl(@PathVariable String user_id) {
-		return new ResponseEntity<User>(userService.getUser(user_id), HttpStatus.OK);
+	public ResponseEntity<User> getUserCtrl(@PathVariable String id) {
+		return new ResponseEntity<User>(userService.getUser(id), HttpStatus.OK);
 	}
 
 	@GetMapping("/users")
