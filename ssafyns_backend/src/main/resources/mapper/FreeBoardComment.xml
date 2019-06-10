@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="freeBoardComment">
+
+	<insert id="insertFreeBoardComment" parameterType="FreeBoardComment">
+		insert into freeboard_comment(fbcomment_no, fbcomment_user_uid, fbcomment_freeboard_no,fbcomment_content, fbcomment_date, fbcomment_likes, fbcomment_hates)
+		values(#{fbcomment_no}, #{fbcomment_user_uid}, #{fbcomment_freeboard_no}, #{fbcomment_content}, #{fbcomment_date}, #{fbcomment_likes}, #{fbcomment_hates})
+	</insert>
+	
+	<update id="updateFreeBoardComment" parameterType="FreeBoardComment">
+		update freeboard_comment
+		set
+		fbcomment_no = #{fbcomment_no},
+		fbcomment_user_uid = #{fbcomment_user_uid}, 
+		fbcomment_freeboard_no = #{fbcomment_freeboard_no},
+		fbcomment_content = #{fbcomment_content}, 
+		fbcomment_date = #{fbcomment_date}, 
+		fbcomment_likes = #{fbcomment_likes}, 
+		fbcomment_hates = #{fbcomment_hates}
+		where fbcomment_no = #{fbcomment_no}
+	</update>
+	
+	<delete id="deleteFreeBoardComment" parameterType="int">
+		delete from freeboard_comment
+		where fbcomment_no = #{fbcomment_no}
+	</delete>
+	
+	<select id="selectFreeBoardComment" parameterType="int">
+		select fbcomment_no, fbcomment_user_uid, fbcomment_freeboard_no,fbcomment_content, fbcomment_date, fbcomment_likes, fbcomment_hates
+		from freeboard_comment
+		where fbcomment_no = #{fbcomment_no}
+	</select>
+	
+	<select id="selectFreeBoardCommentList" resultType="FreeBoardComment">
+		select fbcomment_no, fbcomment_user_uid, fbcomment_freeboard_no,fbcomment_content, fbcomment_date, fbcomment_likes, fbcomment_hates
+		from freeboard_comment
+	</select>
+
+</mapper>
