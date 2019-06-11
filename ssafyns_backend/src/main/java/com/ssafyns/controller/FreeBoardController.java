@@ -29,7 +29,7 @@ public class FreeBoardController {
 	}
 
 	@GetMapping("/freeBoard/{freeboard_no}")
-	public ResponseEntity<Boolean> getFreeBoardCtrl(@PathVariable String freeboard_no) {
+	public ResponseEntity<Boolean> getFreeBoardCtrl(@PathVariable int freeboard_no) {
 		freeBoardService.getFreeBoard(freeboard_no);
 		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 	}
@@ -53,7 +53,7 @@ public class FreeBoardController {
 	}
 
 	@DeleteMapping("freeBoard/{freeboard_no}")
-	public ResponseEntity<Boolean> deleteFreeBoardCtrl(@PathVariable String freeboard_no) {
+	public ResponseEntity<Boolean> deleteFreeBoardCtrl(@PathVariable int freeboard_no) {
 		freeBoardService.destroyFreeBoard(freeboard_no);
 		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 	}

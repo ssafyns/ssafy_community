@@ -21,7 +21,7 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 	}
 	
 	@Override
-	public FreeBoard getFreeBoard(String freeboard_no) {
+	public FreeBoard getFreeBoard(int freeboard_no) {
 		return freeBoardDao.selectFreeBoard(freeboard_no);
 	}
 	
@@ -45,7 +45,7 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 	}
 	
 	@Override
-	public void destroyFreeBoard(String freeboard_no) {
+	public void destroyFreeBoard(int freeboard_no) {
 		freeBoardDao.deleteFreeBoard(freeboard_no);
 	}
 }

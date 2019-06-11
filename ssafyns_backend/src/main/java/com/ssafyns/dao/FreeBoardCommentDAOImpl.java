@@ -19,7 +19,7 @@ public class FreeBoardCommentDAOImpl implements FreeBoardCommentDAO {
 	}
 
 	@Override
-	public FreeBoardComment selectFreeBoardComment(String fbcomment_no) {
+	public FreeBoardComment selectFreeBoardComment(int fbcomment_no) {
 		return session.selectOne("freeBoardComment.selectFreeBoardComment", fbcomment_no);
 	}
 	
@@ -39,7 +39,7 @@ public class FreeBoardCommentDAOImpl implements FreeBoardCommentDAO {
 	}
 
 	@Override
-	public void deleteFreeBoardComment(String fbcomment_no) {
+	public void deleteFreeBoardComment(int fbcomment_no) {
 		session.delete("freeBoardComment.deleteFreeBoardComment", fbcomment_no);
 	}
 }

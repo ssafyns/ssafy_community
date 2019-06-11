@@ -6,7 +6,7 @@ import com.ssafyns.vo.FreeBoard;
 
 public interface FreeBoardService {
 
-	FreeBoard getFreeBoard(String freeboard_no);
+	FreeBoard getFreeBoard(int freeboard_no);
 
 	List<FreeBoard> getFreeBoardList();
 
@@ -14,6 +14,6 @@ public interface FreeBoardService {
 
 	void modifyFreeBoard(FreeBoard freeBoard);
 
-	void destroyFreeBoard(String freeboard_no);
+	void destroyFreeBoard(int freeboard_no);
 
 }

@@ -29,7 +29,7 @@ public class FreeBoardCommentController {
 	}
 
 	@GetMapping("/freeBoardComment/{fbcomment_no}")
-	public ResponseEntity<Boolean> getFreeBoardCommentCtrl(@PathVariable String fbcomment_no) {
+	public ResponseEntity<Boolean> getFreeBoardCommentCtrl(@PathVariable int fbcomment_no) {
 		freeBoardCommentService.getFreeBoardComment(fbcomment_no);
 		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 	}
@@ -53,7 +53,7 @@ public class FreeBoardCommentController {
 	}
 
 	@DeleteMapping("freeBoardComment/{fbcomment_no}")
-	public ResponseEntity<Boolean> deleteFreeBoardCommentCtrl(@PathVariable String fbcomment_no) {
+	public ResponseEntity<Boolean> deleteFreeBoardCommentCtrl(@PathVariable int fbcomment_no) {
 		freeBoardCommentService.destroyFreeBoardComment(fbcomment_no);
 		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 	}
