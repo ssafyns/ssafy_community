@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="NoticeComment">
+
+	<insert id="insertNoticeComment" parameterType="NoticeComment">
+		insert into notice_comment(ncomment_user_uid, ncomment_notice_no,ncomment_content, ncomment_date)
+		values(#{ncomment_user_uid}, #{ncomment_notice_no}, #{ncomment_content}, #{ncomment_date})
+	</insert>
+	
+	<update id="updateNoticeComment" parameterType="NoticeComment">
+		update notice_comment
+		set
+		ncomment_user_uid = #{ncomment_user_uid}, 
+		ncomment_notice_no = #{ncomment_notice_no},
+		ncomment_content = #{ncomment_content}, 
+		ncomment_date = #{ncomment_date}
+		where ncomment_no = #{ncomment_no}
+	</update>
+	
+	<delete id="deleteNoticeComment" parameterType="int">
+		delete from notice_comment
+		where ncomment_no = #{ncomment_no}
+	</delete>
+	
+	<select id="selectNoticeComment" parameterType="int">
+		select ncomment_no, ncomment_user_uid, ncomment_notice_no,ncomment_content, ncomment_date
+		from notice_comment
+		where ncomment_no = #{ncomment_no}
+	</select>
+	
+	<select id="selectNoticeCommentList" resultType="NoticeComment">
+		select ncomment_no, ncomment_user_uid, ncomment_notice_no,ncomment_content, ncomment_date
+		from notice_comment
+	</select>
+
+</mapper>
