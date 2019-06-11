@@ -19,7 +19,7 @@ public class FreeBoardDAOImpl implements FreeBoardDAO {
 	}
 
 	@Override
-	public FreeBoard selectFreeBoard(String freeboard_no) {
+	public FreeBoard selectFreeBoard(int freeboard_no) {
 		return session.selectOne("freeBoard.selectFreeBoard", freeboard_no);
 	}
 	
@@ -39,7 +39,7 @@ public class FreeBoardDAOImpl implements FreeBoardDAO {
 	}
 
 	@Override
-	public void deleteFreeBoard(String freeboard_no) {
+	public void deleteFreeBoard(int freeboard_no) {
 		session.delete("freeBoard.deleteFreeBoard", freeboard_no);
 	}
 }

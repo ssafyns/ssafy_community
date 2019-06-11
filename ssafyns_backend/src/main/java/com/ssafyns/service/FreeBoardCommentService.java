@@ -7,7 +7,7 @@ import com.ssafyns.vo.FreeBoardComment;
 
 public interface FreeBoardCommentService {
 
-	FreeBoardComment getFreeBoardComment(String fbcomment_no);
+	FreeBoardComment getFreeBoardComment(int fbcomment_no);
 
 	List<FreeBoardComment> getFreeBoardCommentList();
 
@@ -15,6 +15,6 @@ public interface FreeBoardCommentService {
 
 	void modifyFreeBoardComment(FreeBoardComment freeBoardComment);
 
-	void destroyFreeBoardComment(String fbcomment_no);
+	void destroyFreeBoardComment(int fbcomment_no);
 
 }

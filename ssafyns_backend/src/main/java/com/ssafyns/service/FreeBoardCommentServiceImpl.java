@@ -21,7 +21,7 @@ public class FreeBoardCommentServiceImpl implements FreeBoardCommentService {
 	}
 	
 	@Override
-	public FreeBoardComment getFreeBoardComment(String fbcomment_no) {
+	public FreeBoardComment getFreeBoardComment(int fbcomment_no) {
 		return freeBoardCommentDao.selectFreeBoardComment(fbcomment_no);
 	}
 	
@@ -44,7 +44,7 @@ public class FreeBoardCommentServiceImpl implements FreeBoardCommentService {
 	}
 	
 	@Override
-	public void destroyFreeBoardComment(String fbcomment_no) {
+	public void destroyFreeBoardComment(int fbcomment_no) {
 		freeBoardCommentDao.deleteFreeBoardComment(fbcomment_no);
 	}
 }

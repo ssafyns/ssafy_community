@@ -10,9 +10,9 @@ public interface FreeBoardDAO {
 
 	void updateFreeBoard(FreeBoard freeBoard);
 
-	void deleteFreeBoard(String freeboard_no);
+	void deleteFreeBoard(int freeboard_no);
 
-	FreeBoard selectFreeBoard(String freeboard_no);
+	FreeBoard selectFreeBoard(int freeboard_no);
 	
 	List<FreeBoard> selectFreeBoardList();
 	

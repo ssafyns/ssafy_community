@@ -1,7 +1,7 @@
 package com.ssafyns.vo;
 
 public class FreeBoardComment {
-	private long fbcomment_no;
+	private int fbcomment_no;
 	private String fbcomment_user_uid;
 	private String fbcomment_freeboard_no;
 	private String fbcomment_content;
@@ -23,11 +23,11 @@ public class FreeBoardComment {
 		this.fbcomment_hates = fbcomment_hates;
 	}
 
-	public long getFbcomment_no() {
+	public int getFbcomment_no() {
 		return fbcomment_no;
 	}
 
-	public void setFbcomment_no(long fbcomment_no) {
+	public void setFbcomment_no(int fbcomment_no) {
 		this.fbcomment_no = fbcomment_no;
 	}
 

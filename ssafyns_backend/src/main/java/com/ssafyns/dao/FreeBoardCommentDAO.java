@@ -7,7 +7,7 @@ import com.ssafyns.vo.FreeBoardComment;
 
 public interface FreeBoardCommentDAO {
 
-	FreeBoardComment selectFreeBoardComment(String fbcomment_no);
+	FreeBoardComment selectFreeBoardComment(int fbcomment_no);
 
 	List<FreeBoardComment> selectFreeBoardCommentList();
 
@@ -15,6 +15,6 @@ public interface FreeBoardCommentDAO {
 
 	void updateFreeBoardComment(FreeBoardComment freeBoardComment);
 
-	void deleteFreeBoardComment(String fbcomment_no);
+	void deleteFreeBoardComment(int fbcomment_no);
 
 }
