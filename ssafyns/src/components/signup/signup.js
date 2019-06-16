@@ -10,6 +10,16 @@ export default {
       userId : '', // 유저 아이디(이메일)
       userPw : '', // 유저 패스워드
       userCpw : '', // 패스워드 확인
+      user_nickname: '',
+      user_phone: '',
+      user_email: 'dml',
+      user_gender: '',
+      user_edu_city: '',
+      user_th : 0,
+      user_rank : '',
+      user_point : 0,
+      user_photo: 'aaa',
+      user_isleave : 1
     }
   },
   computed: {
@@ -23,7 +33,7 @@ export default {
       if(this.userPw !== this.userCpw) {
         alert('비밀번호를 확인해주세요');
       }else if(this.userPw === this.userCpw){
-        axios.post('http://70.12.247.42:8080/user', {
+        axios.post('http://3.19.69.215:8080/ssafyns/user', {
           user_id : this.userId,
           user_pw : this.userPw,
           user_name : this.userName,

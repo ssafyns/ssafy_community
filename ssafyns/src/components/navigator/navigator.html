@@ -1,7 +1,7 @@
 
 <body>
 <nav class="navbar sticky-top navbar-light bg-light">
-    <div style="width: 100%; overflow: auto" >
+    <div style="width: 100%;" >
 
     <a class="navbar-brand" href="#" style="float: left">
         <img src="../../assets/ssafylogo.png" width="30" height="30" alt="">
@@ -13,23 +13,34 @@
         <!--<div class="clearfix">-->
         <li class="nav-item">
             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><router-link to="/board">자유게시판</router-link></a>
+            <a class="nav-link active" id="" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" @click="pu">push</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><router-link to="/login">Login</router-link></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><router-link to="/signup">Signup</router-link></a>
-        </li>
+
         <!--</div>-->
-
-
     </div>
-        <div class="login" style="float: right">
+        <div class="login" style="float: right" v-if="this.$store.getters.getUser === undefined">
             <button class="btn btn-default">
                 <router-link to="/login">로그인</router-link>
             </button>
             <button class="btn btn-default">
                 <router-link to="/signup">회원가입</router-link>
+            </button>
+        </div>
+        <div class="login" style="float: right; padding-right: 20px;" v-else-if="this.$store.getters.getUser !== undefined">
+            <button class="btn btn-default">
+
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-user-circle" style="font-size: 25px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item"><router-link to="/login">로그인</router-link></a>
+                        <a href="#" class="dropdown-item"><router-link to="/signup">회원가입</router-link></a>
+                    </div>
+                </div>
+                <!--{{this.$store.getters.getUser.user_name}}님-->
+            </button>
+            <button class="btn btn-default" @click.prevent="signOut">
+
+                로그아웃
             </button>
         </div>
 

@@ -10,28 +10,55 @@
           <h5 class="card-title text-center">Register</h5>
           <form class="form-signin">
             <div class="form-label-group">
-              <input type="text" id="inputUserame" class="form-control" placeholder="Username" required autofocus>
+              <input type="text" id="inputUserame" class="form-control" placeholder="Username" required autofocus v-model="userName">
               <label for="inputUserame">Username</label>
             </div>
 
             <div class="form-label-group">
-              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required>
+              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required v-model="userId">
               <label for="inputEmail">Email address</label>
+            </div>
+
+
+
+            <div class="form-label-group">
+              <input type="password" id="inputPassword" class="form-control" placeholder="Password" required v-model="userPw">
+              <label for="inputPassword">Password</label>
+            </div>
+
+            <div class="form-label-group">
+              <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Password" required v-model="userCpw">
+              <label for="inputConfirmPassword">Confirm password</label>
             </div>
 
             <hr>
 
             <div class="form-label-group">
-              <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-              <label for="inputPassword">Password</label>
+              <input type="text" id="" class="form-control" placeholder="Nickname" required v-model="user_nickname">
+              <label for="">Nick Name</label>
             </div>
 
             <div class="form-label-group">
-              <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Password" required>
-              <label for="inputConfirmPassword">Confirm password</label>
+              <input type="text" id="" class="form-control" placeholder="PhoneNumber" required v-model="user_phone">
+              <label for="">Phone Number</label>
             </div>
 
-            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
+            <div class="btn-group">
+              <button type="button" class="btn btn-primary">남성</button>
+              <button type="button" class="btn btn-primary">여성</button>
+            </div>
+            <br/>
+            <div style="">지역
+            <select title="city" class="selectpicker" style="padding:10px;" v-model="user_edu_city">
+              <option>서울</option>
+              <option>대전</option>
+              <option>광주</option>
+              <option>구미</option>
+            </select>
+            </div>
+
+
+            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" @click.prevent="goSignup">Register</button>
             <hr class="my-4">
             <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign up with Google</button>
             <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign up with Facebook</button>

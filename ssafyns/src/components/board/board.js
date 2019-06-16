@@ -47,7 +47,7 @@ export default {
 
     },
     getList : function() {
-      axios.get('http://192.168.11.26:8080/login').then(response => {
+      axios.get('http://172.30.1.56/login').then(response => {
         console.log(response.data);
         if(response.data===true){
           this.freeboard = response.data;
