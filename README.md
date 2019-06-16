@@ -6,9 +6,10 @@
 
 ### 프로젝트 명 : SSAFY 커뮤니티 사이트 SSAFY&S
 
-#### 2019-05-08
+_ _ _
 
-##### 요구사항 정의 / 웹 사이트 디자인
+
+#### 요구사항 정의 / 웹 사이트 디자인
 
 - 요구사항 정의
 
@@ -53,9 +54,9 @@
 
 		- db 서버 : 주성
 
-#### 2019-05-12
+_ _ _
 
-##### 사이트 디자인 시안 / DB 모델링
+#### 사이트 디자인 시안 / DB 모델링
 
 - 모델링
 
@@ -63,9 +64,21 @@
 
 - 웹사이트 디자인
 
-![model](./images/site_image.PNG)
+![model](./images/site_image.png)
 
-#### 20190526 backend
+_ _ _
+
+#### SERVER
+
+AWS EC2 인스턴스 생성
+
+서버환경 : Ubuntu 16.04 LTS
+
+데이터베이스 구축
+
+_ _ _
+
+#### Back-End
 
 * 개발환경
   * eclipse
@@ -79,4 +92,7 @@
     * Web
   * Mysql 서버포트 정하기
 
-> gitignore에서 application.properties는 추가하는 게 맞겠지?
+_ _ _
+
+#### Front-End
+

@@ -1,5 +1,9 @@
 package com.ssafyns.service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,22 +21,31 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 	}
 	
 	@Override
-	public void insertFreeBoard(FreeBoard freeBoard) {
-		freeBoardDao.createFreeBoard(freeBoard);
+	public FreeBoard getFreeBoard(int freeboard_no) {
+		return freeBoardDao.selectFreeBoard(freeboard_no);
 	}
 	
 	@Override
-	public FreeBoard selectFreeBoard(String freeboard_no) {
-		return freeBoardDao.getFreeBoard(freeboard_no);
+	public List<FreeBoard> getFreeBoardList() {
+		return freeBoardDao.selectFreeBoardList();
 	}
 	
 	@Override
-	public void updateFreeBoard(FreeBoard freeBoard) {
-		freeBoardDao.modifyFreeBoard(freeBoard);
+	public void createFreeBoard(FreeBoard freeBoard) {
+		long time = System.currentTimeMillis(); 
+		SimpleDateFormat dayTime = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		freeBoard.setFreeboard_date(dayTime.format(new Date(time)));
+		freeBoardDao.insertFreeBoard(freeBoard);
+	}
+	
+	
+	@Override
+	public void modifyFreeBoard(FreeBoard freeBoard) {
+		freeBoardDao.updateFreeBoard(freeBoard);
 	}
 	
 	@Override
-	public void deleteFreeBoard(String freeboard_no) {
+	public void destroyFreeBoard(int freeboard_no) {
 		freeBoardDao.deleteFreeBoard(freeboard_no);
 	}
 }

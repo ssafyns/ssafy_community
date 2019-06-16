@@ -33,6 +33,10 @@
 	<!-- name = "mapper의 namespace" -->
 	<!-- <logger name="food" level="TRACE"/> -->
 	<logger name="user" level="TRACE"/>
+	<logger name="freeBoard" level="TRACE"/>
+	<logger name="Notice" level="TRACE"/>
+	<logger name="NoticeComment" level="TRACE"/>
+	<logger name="freeBoardComment" level="TRACE"/>
 	<!-- <logger name="history" level="TRACE"/> -->
 		
 	<!-- root 로거 기본 설정(다른 로거들의 최상위로거가 됨. 다른 로거들을 기본적으로 상속받게 됨.) -->

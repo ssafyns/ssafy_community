@@ -1,5 +1,7 @@
 package com.ssafyns.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,26 +29,32 @@ public class FreeBoardController {
 	}
 
 	@GetMapping("/freeBoard/{freeboard_no}")
-	public ResponseEntity<Boolean> getFreeBoardCtrl(@PathVariable String freeboard_no) {
-		freeBoardService.selectFreeBoard(freeboard_no);
+	public ResponseEntity<Boolean> getFreeBoardCtrl(@PathVariable int freeboard_no) {
+		freeBoardService.getFreeBoard(freeboard_no);
 		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 	}
 
+	@GetMapping("/freeBoards")
+	public ResponseEntity<List<FreeBoard>> getFreeBoardListCtrl() {
+		List<FreeBoard> list = freeBoardService.getFreeBoardList();
+		return new ResponseEntity<List<FreeBoard>>(list , HttpStatus.OK);
+	}
+	
 	@PostMapping("/freeBoard")
 	public ResponseEntity<Boolean> createFreeBoardCtrl(@RequestBody FreeBoard freeBoard) {
-		freeBoardService.insertFreeBoard(freeBoard);
+		freeBoardService.createFreeBoard(freeBoard);
 		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 	}
 
 	@PutMapping("/freeBoard")
 	public ResponseEntity<Boolean> modifyFreeBoardCtrl(@RequestBody FreeBoard freeBoard) {
-		freeBoardService.updateFreeBoard(freeBoard);
+		freeBoardService.modifyFreeBoard(freeBoard);
 		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 	}
 
 	@DeleteMapping("freeBoard/{freeboard_no}")
-	public ResponseEntity<Boolean> deleteFreeBoardCtrl(@PathVariable String freeboard_no) {
-		freeBoardService.deleteFreeBoard(freeboard_no);
+	public ResponseEntity<Boolean> deleteFreeBoardCtrl(@PathVariable int freeboard_no) {
+		freeBoardService.destroyFreeBoard(freeboard_no);
 		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 	}
 }

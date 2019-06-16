@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class User {
 
+	private Long user_uid;
 	private String user_id;
 	private String user_pw;
 	private String user_name;
@@ -45,6 +46,38 @@ public class User {
 		this.user_point = user_point;
 		this.user_photo = user_photo;
 		this.user_isleave = user_isleave;
+	}
+
+	public User(Long user_uid, String user_id, String user_pw, String user_name, String user_nickname,
+			String user_phone, String user_email, Date user_birth, String user_gender, String user_address,
+			String user_school, String user_edu_city, int user_th, String user_rank, int user_point, String user_photo,
+			int user_isleave) {
+		super();
+		this.user_uid = user_uid;
+		this.user_id = user_id;
+		this.user_pw = user_pw;
+		this.user_name = user_name;
+		this.user_nickname = user_nickname;
+		this.user_phone = user_phone;
+		this.user_email = user_email;
+		this.user_birth = user_birth;
+		this.user_gender = user_gender;
+		this.user_address = user_address;
+		this.user_school = user_school;
+		this.user_edu_city = user_edu_city;
+		this.user_th = user_th;
+		this.user_rank = user_rank;
+		this.user_point = user_point;
+		this.user_photo = user_photo;
+		this.user_isleave = user_isleave;
+	}
+
+	public Long getUser_uid() {
+		return user_uid;
+	}
+
+	public void setUser_uid(Long user_uid) {
+		this.user_uid = user_uid;
 	}
 
 	public String getUser_id() {
@@ -177,11 +210,12 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [user_id=" + user_id + ", user_pw=" + user_pw + ", user_name=" + user_name + ", user_nickname="
-				+ user_nickname + ", user_phone=" + user_phone + ", user_email=" + user_email + ", user_birth="
-				+ user_birth + ", user_gender=" + user_gender + ", user_address=" + user_address + ", user_school="
-				+ user_school + ", user_edu_city=" + user_edu_city + ", user_th=" + user_th + ", user_rank=" + user_rank
-				+ ", user_point=" + user_point + ", user_photo=" + user_photo + ", user_isleave=" + user_isleave + "]";
+		return "User [user_uid=" + user_uid + ", user_id=" + user_id + ", user_pw=" + user_pw + ", user_name="
+				+ user_name + ", user_nickname=" + user_nickname + ", user_phone=" + user_phone + ", user_email="
+				+ user_email + ", user_birth=" + user_birth + ", user_gender=" + user_gender + ", user_address="
+				+ user_address + ", user_school=" + user_school + ", user_edu_city=" + user_edu_city + ", user_th="
+				+ user_th + ", user_rank=" + user_rank + ", user_point=" + user_point + ", user_photo=" + user_photo
+				+ ", user_isleave=" + user_isleave + "]";
 	}
 
 }

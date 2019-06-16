@@ -1,15 +1,19 @@
 package com.ssafyns.dao;
 
+import java.util.List;
+
 import com.ssafyns.vo.FreeBoard;
 
 public interface FreeBoardDAO {
+	
+	void insertFreeBoard(FreeBoard freeBoard);
 
-	void createFreeBoard(FreeBoard freeBoard);
+	void updateFreeBoard(FreeBoard freeBoard);
 
-	FreeBoard getFreeBoard(String freeboard_no);
+	void deleteFreeBoard(int freeboard_no);
 
-	void modifyFreeBoard(FreeBoard freeBoard);
-
-	void deleteFreeBoard(String freeboard_no);
-
+	FreeBoard selectFreeBoard(int freeboard_no);
+	
+	List<FreeBoard> selectFreeBoardList();
+	
 }
