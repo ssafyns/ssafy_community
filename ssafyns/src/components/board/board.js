@@ -8,15 +8,7 @@ export default {
     return {
 
       title: "",
-      freeboard: [
-        {
-          "freeboard_no":1,
-          "user_uid":"chlgn66",
-          "freeboard_title" : "싸피홧팅",
-          "freeboard_hits" : 50,
-          "freeboard_date" : "5/30"
-        }
-      ]
+      freeboard: []
 
     }
   },
@@ -33,11 +25,15 @@ export default {
 
   },
   mounted () {
+    this.getList();
 
   },
   created(){
-    this.getList()
+    this.getList();
     console.log("하위^^")
+  },
+  watch : {
+    '$route' : 'getList'
   },
   methods: {
     searchTarget: function (e) {
@@ -47,17 +43,28 @@ export default {
 
     },
     getList : function() {
-      axios.get('http://192.168.11.26:8080/login').then(response => {
-        console.log(response.data);
-        if(response.data===true){
+      axios.get('http://172.30.1.56:8080/freeBoards').then(response => {
+
+
           this.freeboard = response.data;
-        }
+          console.log(this.freeboard);
+
       })
     },
-    registerBoard : function() {
 
-    },
-    detailBoard : function() {
+    //번호찾기
+    detailBoard : function(boardNo) {
+      console.log(boardNo);
+      axios.get('http://172.30.1.56:8080/freeBoard'+'/'+boardNo).then(response => {
+        if(response.data == true) {
+          this.$store.state.freeboard = response.data;
+          console.log(this.$store.freeboard);
+        }
+      }).then(this.$router.replace({
+        name : 'board_detail'
+      }))
+
+
 
     }
 

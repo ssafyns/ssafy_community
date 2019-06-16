@@ -4,16 +4,15 @@ export default {
   props: [],
   data () {
     return {
-
+      detailFreeboad : this.$store.state.freeboard
     }
   },
   computed: {
 
   },
-  mounted () {
-
-  },
-  methods: {
+  mounted : {
 
   }
+
 }
+

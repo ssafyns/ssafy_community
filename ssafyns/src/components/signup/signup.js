@@ -23,7 +23,7 @@ export default {
       if(this.userPw !== this.userCpw) {
         alert('비밀번호를 확인해주세요');
       }else if(this.userPw === this.userCpw){
-        axios.post('http://70.12.247.42:8080/user', {
+        axios.post('http://172.30.1.56:8080/user', {
           user_id : this.userId,
           user_pw : this.userPw,
           user_name : this.userName,
