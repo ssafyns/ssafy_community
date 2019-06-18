@@ -21,7 +21,7 @@ public class NoticeServiceImpl implements NoticeService {
 	}
 	
 	@Override
-	public Notice getNotice(String notice_no) {
+	public Notice getNotice(int notice_no) {
 		return noticeDao.selectNotice(notice_no);
 	}
 	
@@ -45,7 +45,7 @@ public class NoticeServiceImpl implements NoticeService {
 	}
 	
 	@Override
-	public void destroyNotice(String notice_no) {
+	public void destroyNotice(int notice_no) {
 		noticeDao.deleteNotice(notice_no);
 	}
 }

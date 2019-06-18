@@ -19,7 +19,7 @@ public class NoticeDAOImpl implements NoticeDAO {
 	}
 
 	@Override
-	public Notice selectNotice(String notice_no) {
+	public Notice selectNotice(int notice_no) {
 		return session.selectOne("Notice.selectNotice", notice_no);
 	}
 	
@@ -39,7 +39,7 @@ public class NoticeDAOImpl implements NoticeDAO {
 	}
 
 	@Override
-	public void deleteNotice(String notice_no) {
+	public void deleteNotice(int notice_no) {
 		session.delete("Notice.deleteNotice", notice_no);
 	}
 }

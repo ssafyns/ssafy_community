@@ -6,7 +6,7 @@ import com.ssafyns.vo.Notice;
 
 public interface NoticeService {
 
-	Notice getNotice(String freeboard_no);
+	Notice getNotice(int freeboard_no);
 
 	List<Notice> getNoticeList();
 
@@ -14,6 +14,6 @@ public interface NoticeService {
 
 	void modifyNotice(Notice Notice);
 
-	void destroyNotice(String freeboard_no);
+	void destroyNotice(int freeboard_no);
 
 }

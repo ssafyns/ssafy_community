@@ -30,7 +30,7 @@ public class NoticeCommentController {
 
 	@GetMapping("/noticeComment/{ncomment_no}")
 	public ResponseEntity<Boolean> getNoticeCommentCtrl(@PathVariable String ncomment_no) {
-		noticeCommentService.getNoticeComment(ncomment_no);
+		noticeCommentService.getNoticeComment(Integer.parseInt(ncomment_no));
 		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 	}
 
@@ -54,7 +54,7 @@ public class NoticeCommentController {
 
 	@DeleteMapping("noticeComment/{ncomment_no}")
 	public ResponseEntity<Boolean> deleteNoticeCommentCtrl(@PathVariable String ncomment_no) {
-		noticeCommentService.destroyNoticeComment(ncomment_no);
+		noticeCommentService.destroyNoticeComment(Integer.parseInt(ncomment_no));
 		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 	}
 }

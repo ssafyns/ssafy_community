@@ -7,14 +7,13 @@
 <mapper namespace="message">
 
 <insert id="insertMessage" parameterType="Message">
-	insert into message(message_no, message_suid, message_ruid, message_title, message_content, message_date, message_isread, message_rdel, message_sdel)
-	values(#{message_no}, #{message_suid}, #{message_ruid}, #{message_title}, #{message_content}, #{message_date}, #{message_isread}, #{message_rdel}, #{message_sdel})
+	insert into message(message_suid, message_ruid, message_title, message_content, message_date, message_isread, message_rdel, message_sdel)
+	values(#{message_suid}, #{message_ruid}, #{message_title}, #{message_content}, #{message_date}, #{message_isread}, #{message_rdel}, #{message_sdel})
 </insert>
 
 <update id="updateMessage" parameterType="Message">
 	update message
 	set
-	message_no = message_no,
 	message_suid = message_suid, 
 	message_ruid = message_ruid, 
 	message_title = message_title, 
@@ -31,7 +30,7 @@
 	where message_no = #{message_no}
 </delete>
 
-<select id="selectMessage" parameterType="int">
+<select id="selectMessage" parameterType="int" resultType="Message">
 	select message_no, message_suid, message_ruid, message_title, message_content, message_date, message_isread, message_rdel, message_sdel
 	from message
 	where message_no = #{message_no}

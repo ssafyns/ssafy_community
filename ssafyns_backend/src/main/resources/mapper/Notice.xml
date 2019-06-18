@@ -26,7 +26,7 @@
 	where notice_no = #{notice_no}
 </delete>
 
-<select id="selectNotice" parameterType="int">
+<select id="selectNotice" parameterType="int" resultType="Notice">
 	select notice_no, notice_title, notice_content, notice_date, notice_hits
 	from notice
 	where notice_no = #{notice_no}

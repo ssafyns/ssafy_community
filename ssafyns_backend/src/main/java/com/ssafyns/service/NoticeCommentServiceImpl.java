@@ -21,7 +21,7 @@ public class NoticeCommentServiceImpl implements NoticeCommentService {
 	}
 	
 	@Override
-	public NoticeComment getNoticeComment(String fbcomment_no) {
+	public NoticeComment getNoticeComment(int fbcomment_no) {
 		return noticeCommentDao.selectNoticeComment(fbcomment_no);
 	}
 	
@@ -44,7 +44,7 @@ public class NoticeCommentServiceImpl implements NoticeCommentService {
 	}
 	
 	@Override
-	public void destroyNoticeComment(String fbcomment_no) {
+	public void destroyNoticeComment(int fbcomment_no) {
 		noticeCommentDao.deleteNoticeComment(fbcomment_no);
 	}
 }
