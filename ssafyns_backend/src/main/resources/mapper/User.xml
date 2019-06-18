@@ -19,11 +19,11 @@
 	<update id="UpdateUser" parameterType="User">
 		update user
 		set 
-		user_pw = #{user_id}, user_pw = #{user_pw}, user_name=#{user_name}, user_nickname=#{user_nickname}, 
+		user_id = #{user_id}, user_pw = #{user_pw}, user_name=#{user_name}, user_nickname=#{user_nickname}, 
 		user_phone=#{user_phone}, user_email=#{user_email}, user_birth=#{user_birth}, user_gender=#{user_gender}, 
 		user_address=#{user_address}, user_school=#{user_school}, user_th=#{user_th}, user_rank=#{user_rank}, 
 		user_point=#{user_point}, user_photo=#{user_photo}, user_isleave=#{user_isleave}		
-		where user_id = #{user_id}
+		where user_uid = #{user_uid}
 	</update>
 
 	<delete id="DeleteUser" parameterType="String">
@@ -33,7 +33,7 @@
 
 	<select id="SelectUser" parameterType="String" resultType="User">
 		select
-		user_uid, user_id, user_pw, user_name, user_nickname, user_phone, user_email,	user_birth, user_gender,
+		user_uid, user_id, user_pw, user_name, user_nickname, user_phone, user_email, user_birth, user_gender,
 		user_address, user_school, user_th, user_rank, user_point, user_photo, user_isleave 
 		from user
 		where user_id = #{user_id}

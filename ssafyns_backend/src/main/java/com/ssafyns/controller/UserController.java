@@ -37,8 +37,8 @@ public class UserController {
 	}
 
 	@DeleteMapping("/user/{id}")
-	public ResponseEntity<Boolean> destroyUserCtrl(@PathVariable String id, HttpSession hsession) {
-		userService.destroyUser(id);
+	public ResponseEntity<Boolean> destroyUserCtrl(@PathVariable String user_id, HttpSession hsession) {
+		userService.destroyUser(user_id);
 		hsession.invalidate();
 		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 	}
