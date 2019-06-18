@@ -29,8 +29,8 @@ public class FreeBoardController {
 	}
 
 	@GetMapping("/freeBoard/{freeboard_no}")
-	public ResponseEntity<Boolean> getFreeBoardCtrl(@PathVariable int freeboard_no) {
-		freeBoardService.getFreeBoard(freeboard_no);
+	public ResponseEntity<Boolean> getFreeBoardCtrl(@PathVariable String freeboard_no) {
+		freeBoardService.getFreeBoard(Integer.parseInt(freeboard_no));
 		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 	}
 

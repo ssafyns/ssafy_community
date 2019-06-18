@@ -31,7 +31,7 @@
 	where freeboard_no = #{freeboard_no}
 </delete>
 
-<select id="selectFreeBoard" parameterType="int">
+<select id="selectFreeBoard" parameterType="int" resultType="FreeBoard">
 	select freeboard_no, freeboard_user_uid, freeboard_title, freeboard_content, freeboard_date, 
 	freeboard_hits, freeboard_likes, freeboard_hates
 	from freeboard
