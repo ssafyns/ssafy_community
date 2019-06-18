@@ -28,7 +28,7 @@
 		where fbcomment_no = #{fbcomment_no}
 	</delete>
 	
-	<select id="selectFreeBoardComment" parameterType="int">
+	<select id="selectFreeBoardComment" parameterType="int" resultType="FreeBoardComment">
 		select fbcomment_no, fbcomment_user_uid, fbcomment_freeboard_no,fbcomment_content, fbcomment_date, fbcomment_likes, fbcomment_hates
 		from freeboard_comment
 		where fbcomment_no = #{fbcomment_no}

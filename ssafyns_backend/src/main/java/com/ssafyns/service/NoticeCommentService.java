@@ -6,7 +6,7 @@ import com.ssafyns.vo.NoticeComment;
 
 public interface NoticeCommentService {
 
-	NoticeComment getNoticeComment(String ncomment_no);
+	NoticeComment getNoticeComment(int ncomment_no);
 
 	List<NoticeComment> getNoticeCommentList();
 
@@ -14,6 +14,6 @@ public interface NoticeCommentService {
 
 	void modifyNoticeComment(NoticeComment noticeComment);
 
-	void destroyNoticeComment(String ncomment_no);
+	void destroyNoticeComment(int ncomment_no);
 
 }

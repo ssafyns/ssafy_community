@@ -6,7 +6,7 @@ import com.ssafyns.vo.NoticeComment;
 
 public interface NoticeCommentDAO {
 
-	NoticeComment selectNoticeComment(String ncomment_no);
+	NoticeComment selectNoticeComment(int ncomment_no);
 
 	List<NoticeComment> selectNoticeCommentList();
 
@@ -14,6 +14,6 @@ public interface NoticeCommentDAO {
 
 	void updateNoticeComment(NoticeComment noticeComment);
 
-	void deleteNoticeComment(String ncomment_no);
+	void deleteNoticeComment(int ncomment_no);
 
 }
